@@ -2,8 +2,6 @@ import os
 import sys
 import shutil
 
-git_clone = "git clone "
-
 def get_wp(wp_dir):
     wp_git = "https://github.com/WordPress/WordPress.git "
 
@@ -29,7 +27,7 @@ def get_git_plugins(wp_dir):
 
     for plugin in git_plugins:
         print("\nGetting -> "+plugin+"\n")
-        os.system(git_clone+plugin)
+        os.system("git clone "+plugin)
 
     os.chdir("../../..")
 
@@ -44,9 +42,6 @@ def get_wp_plugins(wp_dir):
     wp_plugins.append("easy-wp-smtp")
     wp_plugins.append("flamingo")
     wp_plugins.append("query-monitor")
-    wp_plugins.append("woocommerce")
-    wp_plugins.append("woocommerce-autocomplete-order")
-    wp_plugins.append("woocommerce-pdf-invoices")
     wp_plugins.append("wordpress-seo")
 
     print("\n@ Getting plugins from Wordpress.org @\n")
